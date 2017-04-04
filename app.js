@@ -76,6 +76,10 @@ io.on('connection', function (socket) {
       }
     }   
   });
+
+  socket.on('typing', function (data) {
+      socket.broadcast.emit('typing', data);
+    });
 });
 
 //End Socket.IO area
